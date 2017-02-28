@@ -87,6 +87,7 @@ class Conway extends Component {
   resetHandler = () => {
     this.setState(state => ({
       board: generateNewBoard(state.M, state.N, state.prob),
+      stepsElapsed: 0,
     }));
   }
 

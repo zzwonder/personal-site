@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import ReactMarkdown from 'react-markdown';
 import Helmet from 'react-helmet';
-import LinkRenderer from '../components/About/LinkRenderer';
+import LinkRenderer from '../components/Markdown/LinkRenderer';
 
 import markdown from '../data/about.md';
 
