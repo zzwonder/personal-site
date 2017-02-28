@@ -10,7 +10,7 @@ import Conway from './Conway';
 
 const Post = () => (
   <article className="post" id="about">
-    <Helmet title="Welcome" />
+    <Helmet title="Welcome | Blog" />
     <header>
       <div className="title">
         <h2><Link to="/blog/first">Welcome</Link></h2>
