@@ -19,7 +19,7 @@ class Conway extends Component {
       stepsElapsed: 0,
       stepLength: 100,
       prob: 0.75,
-      paused: false,
+      paused: true,
       kernel: genKernel(),
     };
     const board = generateNewBoard(this.state.M, this.state.N, this.state.prob);
@@ -27,16 +27,30 @@ class Conway extends Component {
   }
 
   componentDidMount() {
-    this.timer = setInterval(this.updateBoard, this.state.stepLength);
+    if (!this.state.paused) {
+      this.timer = setInterval(this.updateBoard, this.state.stepLength);
+    }
   }
 
   componentWillUnmount() {
     clearInterval(this.timer);
   }
 
+  onMouseOver = (idx, event) => {
+    if (event.buttons === 1) { // if mouse is down
+      const board = this.state.board;
+      board[idx] = 1; // turn on cells;
+      this.setState({
+        board,
+      });
+    }
+  }
 
   getBoard() {
-    return this.state.board.map(val => <div className={`cell${val}`} />);
+    return this.state.board.map((val, idx) => <div
+      onMouseOver={(event) => { this.onMouseOver(idx, event); }}
+      className={`cell${val}`}
+    />);
   }
 
   updateBoard = () => {
