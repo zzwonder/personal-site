@@ -4781,6 +4781,10 @@ rc@^1.0.1, rc@^1.1.2, rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+rd3@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/rd3/-/rd3-0.7.4.tgz#d5ddf1025a844e4fbef28d918276f97ee1abdcd9"
+
 react-burger-menu@^1.10.12:
   version "1.10.12"
   resolved "https://registry.yarnpkg.com/react-burger-menu/-/react-burger-menu-1.10.12.tgz#503584c9b171a659171a5f9326b2282ad063ac87"

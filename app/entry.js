@@ -9,7 +9,7 @@ import Main from './layouts/Main';
 import Index from './pages/Index';
 import About from './pages/About';
 import Blog from './pages/Blog';
-import Post from './pages/Post';
+import First from './pages/posts/first/First';
 
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
@@ -49,7 +49,7 @@ ReactDOM.render(
 
     <Route path="/blog" component={Main}>
       <IndexRoute component={Blog} />
-      <Route path="/blog/:post" component={Post} />
+      <Route path="/blog/first" component={First} />
     </Route>
 
     <Route path="/" component={props => (<Main fullPage>{props.children}</Main>)}>

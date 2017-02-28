@@ -1,0 +1,83 @@
+.conway {
+  h2 {
+    text-align: center;
+  }
+
+  .controls {
+    text-align: center;
+    margin: 1em auto;
+
+    button {
+      margin: 0 0.5em;
+    }
+
+    .steps { // Copied from button style
+      -webkit-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      -moz-transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      -webkit-transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      -ms-transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      background-color: transparent;
+      color: #3c3b3b !important;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 0.6em;
+      font-weight: 800;
+      height: 4.8125em;
+      letter-spacing: 0.25em;
+      line-height: 4.8125em;
+      padding: 0 2.5em;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+  }
+
+  .board-container {
+    position: relative;
+    width: 100%;
+    max-width: 75vh;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .board-container:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  .board {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: inset 0 0 0 1px black;
+    padding: 0;
+  }
+
+  .cell0 {
+    height: 2%;
+    width: 2%;
+    margin: 0;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    float: left;
+    background-color: slategray;
+  }
+
+  .cell1 {
+    height: 2%;
+    width: 2%;
+    margin: 0;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    float: left;
+    background-color: white;
+  }
+
+}
