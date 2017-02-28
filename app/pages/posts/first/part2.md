@@ -1,6 +1,6 @@
 <br><br>
 
-This is a quick and dirty version of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life). The board contains 50x50 cells and each iteration takes 100ms. 
+This is a quick and dirty version of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life). The board contains 50x50 cells and each iteration takes 100ms. You can paint more cells by clicking and dragging over the board.
 <br><br>
 The rules are relatively simple:
   1. Any live cell with fewer than two live neighbors dies, as if caused by underpopulation.

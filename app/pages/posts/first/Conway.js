@@ -53,6 +53,13 @@ class Conway extends Component {
     />);
   }
 
+  getPauseButton() {
+    const message = (this.state.stepsElapsed === 0) ? 'Start' : 'Resume';
+    return (
+      <button onClick={this.pauseHandler}>{(this.state.paused ? message : 'Pause')}</button>
+    );
+  }
+
   updateBoard = () => {
     const M = this.state.M;
     const N = this.state.N;
@@ -84,6 +91,13 @@ class Conway extends Component {
     }));
   }
 
+  resetHandler = () => {
+    this.setState(state => ({
+      board: generateNewBoard(state.M, state.N, state.prob),
+      stepsElapsed: 0,
+    }));
+  }
+
   pauseHandler = () => {
     if (this.state.paused) {
       this.timer = setInterval(this.updateBoard, this.state.stepLength);
@@ -95,18 +109,11 @@ class Conway extends Component {
     });
   }
 
-  resetHandler = () => {
-    this.setState(state => ({
-      board: generateNewBoard(state.M, state.N, state.prob),
-      stepsElapsed: 0,
-    }));
-  }
-
   render() {
     return (
       <div className="conway">
         <div className="controls">
-          <button onClick={this.pauseHandler}>{this.state.paused ? 'Resume' : 'Pause'}</button>
+          {this.getPauseButton()}
           <button onClick={this.resetHandler}>Reset</button>
           <div className="steps">Steps: {this.state.stepsElapsed}</div>
         </div>
