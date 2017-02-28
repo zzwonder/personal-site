@@ -10,8 +10,6 @@ const generateNewBoard = (M, N, prob) => Array.from({
   length: M * N,
 }, () => (Math.random() > prob ? 1 : 0));
 
-const countPopulation = board => board.reduce((prev, curr) => prev + curr, 0);
-
 class Conway extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +24,6 @@ class Conway extends Component {
     };
     const board = generateNewBoard(this.state.M, this.state.N, this.state.prob);
     this.state.board = board;
-    this.state.population = countPopulation(board);
   }
 
   componentDidMount() {

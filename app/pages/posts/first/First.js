@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import ReactMarkdown from 'react-markdown';
 import Helmet from 'react-helmet';
-import LinkRenderer from '../../../components/Markdown/LinkRenderer';
 
 import part1 from './part1.md';
 import part2 from './part2.md';
@@ -19,16 +18,10 @@ const Post = () => (
     </header>
     <ReactMarkdown
       source={part1}
-      renderers={{
-        Link: LinkRenderer,
-      }}
     />
     <Conway />
     <ReactMarkdown
       source={part2}
-      renderers={{
-        Link: LinkRenderer,
-      }}
     />
   </article>
 );
