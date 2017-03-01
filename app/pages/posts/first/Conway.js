@@ -36,8 +36,8 @@ class Conway extends Component {
     clearInterval(this.timer);
   }
 
-  onMouseOver = (idx, event) => {
-    if (event.buttons === 1) { // if mouse is down
+  onMouseOver = (idx, click) => {
+    if (click === 1) { // if mouse is down
       const board = this.state.board;
       board[idx] = 1; // turn on cells;
       this.setState({
@@ -48,7 +48,9 @@ class Conway extends Component {
 
   getBoard() {
     return this.state.board.map((val, idx) => <div
-      onMouseOver={(event) => { this.onMouseOver(idx, event); }}
+    onMouseDown
+      onMouseDown={(event) => { this.onMouseOver(idx, 1); }}
+      onMouseOver={(event) => { this.onMouseOver(idx, event.buttons); }}
       className={`cell${val}`}
     />);
   }

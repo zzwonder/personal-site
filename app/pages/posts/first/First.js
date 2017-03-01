@@ -8,7 +8,7 @@ import part2 from './part2.md';
 import Conway from './Conway';
 
 const Post = () => (
-  <article className="post" id="about">
+  <article className="post" id="post">
     <Helmet title="Welcome | Blog" />
     <header>
       <div className="title">
