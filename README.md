@@ -1,14 +1,17 @@
 ## [mldangelo.com](http://mldangelo.com)
+
 My personal website. Built using Node.js, React, Express, React-Router, Hot Module Reloading, Webpack and many other technologies.
 
 ### Tests:
 [![Code Climate](https://codeclimate.com/github/mldangelo/mldangelo/badges/gpa.svg)](https://codeclimate.com/github/mldangelo/mldangelo)
 [![Build Status](https://travis-ci.org/mldangelo/mldangelo.svg?branch=master)](https://travis-ci.org/mldangelo/mldangelo)
 [![Dependency Tracking](https://david-dm.org/mldangelo/mldangelo.svg)](https://david-dm.org/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/mldangelo/mldangelo.svg)](https://greenkeeper.io/)
 
 ### Dependencies:
 * node >= v6.0.0
-* yarn >= v0.18.
+* yarn >= v0.20.0
+* mongodb >= 3.4.0
 
 ### Installation:
 
@@ -16,7 +19,7 @@ My personal website. Built using Node.js, React, Express, React-Router, Hot Modu
   ```bash
   git clone git://github.com/mldangelo/mldangelo.git
   cd mldangelo
-  yarn 
+  yarn
   ```
 
 2. Optionally configure nginx. Run:
@@ -33,7 +36,7 @@ for installation and setup instructions. A cronjob such as:
   ```bash
   0 0 1 * * sudo /home/ubuntu/certbot/certbot-auto renew --quiet --no-self-upgrade
   ```
-  
+
   should be set to automatically renew the certificate in production.
 
 

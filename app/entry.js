@@ -1,63 +1,56 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import ReactGA from 'react-ga';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
-// Layouts
-import Main from './layouts/Main';
+import PrivateRoute from './components/Routes/PrivateRoute';
+import AdminRoute from './components/Routes/AdminRoute';
 
-import Index from './pages/Index';
-import About from './pages/About';
-import Blog from './pages/Blog';
-import First from './pages/posts/first/First';
+// Featured
+import Index from './views/Index';
+import About from './views/About';
+import Projects from './views/Projects';
+import Resume from './views/Resume';
+import Stats from './views/Stats';
+import Contact from './views/Contact';
 
-import Projects from './pages/Projects';
-import Resume from './pages/Resume';
-import Stats from './pages/Stats';
-import Contact from './pages/Contact';
+import Blog from './views/Blog';
+// import First from './views/posts/first/First';
+// <Route path="/blog/first" component={First} />
+// <Route path="/blog" component={Blog} />
 
-import Music from './pages/Music';
+// Hidden
+import Music from './views/Music';
 
-import NotFound from './pages/NotFound';
+import Login from './views/Login';
+import Admin from './views/Admin';
 
-if (process.env.NODE_ENV === 'production') {
-  ReactGA.initialize('UA-68649021-1');
-}
-
-const update = () => {
-  window.scrollTo(0, 0);
-  if (process.env.NODE_ENV === 'production') {
-    ReactGA.set({ page: window.location.pathname });
-    ReactGA.pageview(window.location.pathname);
-  }
-};
+import NotFound from './views/NotFound';
 
 // All of our CSS
 require('../public/css/main.scss');
 
 ReactDOM.render(
-  <Router onUpdate={update} history={browserHistory}>
-
-    <Route path="/" component={Main}>
-      <IndexRoute component={Index} />
+  <Router>
+    <Switch>
+      <Route path="/" exact component={Index} />
       <Route path="/about" component={About} />
       <Route path="/projects" component={Projects} />
       <Route path="/resume" component={Resume} />
       <Route path="/stats" component={Stats} />
       <Route path="/contact" component={Contact} />
-    </Route>
-
-    <Route path="/blog" component={Main}>
-      <IndexRoute component={Blog} />
-      <Route path="/blog/first" component={First} />
-    </Route>
-
-    <Route path="/" component={props => (<Main fullPage>{props.children}</Main>)}>
       <Route path="/music" component={Music} />
-    </Route>
+      <Route path="/login" component={Login} />
 
-    <Route path="*" component={NotFound} status={404} />
 
+      <PrivateRoute path="/resume" component={Resume} />
+      <AdminRoute path="/admin" component={Admin} />
+
+      <Route component={NotFound} status={404} />
+    </Switch>
   </Router>,
   document.getElementById('root'),
 );

@@ -1,6 +1,8 @@
+import 'dotenv/config';
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StatsPlugin from 'stats-webpack-plugin';
 
@@ -15,9 +17,12 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'views/index.tpl.html',
+      template: 'server/views/index.tpl.html',
       inject: 'body',
       filename: 'index.html',
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer',
     }),
     new ExtractTextPlugin('[name]-[hash].min.css'),
     new webpack.optimize.UglifyJsPlugin({
@@ -36,9 +41,6 @@ export default {
     new StatsPlugin('webpack.stats.json', {
       source: false,
       modules: false,
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/),
   ],

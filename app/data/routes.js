@@ -1,11 +1,11 @@
 const data = [
   {
-    link: '/',
+    path: '/',
     label: 'Michael D\'Angelo',
     index: true,
   },
   {
-    link: '/about',
+    path: '/about',
     label: 'About',
   },
   {
@@ -21,11 +21,11 @@ const data = [
     label: 'Blog',
   },
   {
-    link: '/stats',
+    path: '/stats',
     label: 'Stats',
   },
   {
-    link: '/contact',
+    path: '/contact',
     label: 'Contact',
   },
 ];

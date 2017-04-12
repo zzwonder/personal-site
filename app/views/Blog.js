@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
+import Main from '../layouts/Main';
 import links from '../data/posts';
 
 const Blog = () => (
+  <Main>
   <article className="post" id="blog">
     <Helmet title="Blog" />
     <header>
@@ -22,6 +24,7 @@ const Blog = () => (
       ))}
     </div>
   </article>
+  </Main>
 );
 
 export default Blog;
