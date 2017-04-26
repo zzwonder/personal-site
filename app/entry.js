@@ -18,7 +18,7 @@ import Stats from './views/Stats';
 import Contact from './views/Contact';
 
 import Blog from './views/Blog';
-// import First from './views/posts/first/First';
+import First from './views/posts/first/First';
 // <Route path="/blog/first" component={First} />
 // <Route path="/blog" component={Blog} />
 
@@ -49,6 +49,8 @@ ReactDOM.render(
       <Route path="/music" component={Music} />
       <Route path="/login" component={Login} />
 
+      <Route path="/blog" exact component={Blog} />
+      <Route path="/blog/first" component={First} />
 
       <PrivateRoute path="/resume" component={Resume} />
       <AdminRoute path="/admin" component={Admin} />

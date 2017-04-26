@@ -9,15 +9,15 @@ const data = [
     label: 'About',
   },
   {
-    link: '/projects',
+    path: '/projects',
     label: 'Projects',
   },
   {
-    link: '/resume',
+    path: '/resume',
     label: 'Resume',
   },
   {
-    link: '/blog',
+    path: '/blog',
     label: 'Blog',
   },
   {

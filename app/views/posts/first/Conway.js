@@ -48,8 +48,8 @@ class Conway extends Component {
 
   getBoard() {
     return this.state.board.map((val, idx) => <div
-    onMouseDown
-      onMouseDown={(event) => { this.onMouseOver(idx, 1); }}
+      key={`${idx}${val}`} // eslint-disable-line react/no-array-index-key
+      onMouseDown={() => { this.onMouseOver(idx, 1); }}
       onMouseOver={(event) => { this.onMouseOver(idx, event.buttons); }}
       className={`cell${val}`}
     />);
