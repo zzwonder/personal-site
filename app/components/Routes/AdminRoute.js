@@ -1,12 +1,13 @@
-import React, { PropTypes } from 'react';
-import cookie from 'react-cookie';
+import React from 'react';
+import PropTypes from 'prop-types';
+import cookie from 'js-cookie';
 import { Route, Redirect } from 'react-router-dom';
 
 const AdminRoute = ({ component, ...rest }) => (
   <Route
     {...rest} render={(props) => {
       if (!window.id) { // checks for non authenticated accounts
-        cookie.save('target', props.location.pathname, { path: '/' });
+        cookie.set('target', props.location.pathname);
       }
       return (
         window.admin ? (
@@ -26,12 +27,24 @@ const AdminRoute = ({ component, ...rest }) => (
 
 AdminRoute.propTypes = {
   component: PropTypes.func,
-  location: PropTypes.string, // TODO Verify this type
+  location: PropTypes.shape({
+    hash: PropTypes.string,
+    key: PropTypes.string,
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+    state: PropTypes.string,
+  }),
 };
 
 AdminRoute.defaultProps = {
   component: null,
-  location: '',
+  location: {
+    hash: '',
+    key: '',
+    pathname: '',
+    search: '',
+    state: '',
+  },
 };
 
 export default AdminRoute;
