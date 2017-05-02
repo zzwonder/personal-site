@@ -18,9 +18,8 @@ import Stats from './views/Stats';
 import Contact from './views/Contact';
 
 import Blog from './views/Blog';
-import First from './views/posts/first/First';
-// <Route path="/blog/first" component={First} />
-// <Route path="/blog" component={Blog} />
+import First from './views/posts/first';
+import Primes from './views/posts/primes';
 
 // Hidden
 import Music from './views/Music';
@@ -41,16 +40,17 @@ ReactDOM.render(
   <Router>
     <Switch>
       <Route path="/" exact component={Index} />
-      <Route path="/about" component={About} />
-      <Route path="/projects" component={Projects} />
-      <Route path="/resume" component={Resume} />
-      <Route path="/stats" component={Stats} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/music" component={Music} />
-      <Route path="/login" component={Login} />
+      <Route path="/about" exact component={About} />
+      <Route path="/projects" exact component={Projects} />
+      <Route path="/resume" exact component={Resume} />
+      <Route path="/stats" exact component={Stats} />
+      <Route path="/contact" exact component={Contact} />
+      <Route path="/music" exact component={Music} />
+      <Route path="/login" exact component={Login} />
 
       <Route path="/blog" exact component={Blog} />
-      <Route path="/blog/first" component={First} />
+      <Route path="/blog/first" exact component={First} />
+      <Route path="/blog/primes" exact component={Primes} />
 
       <PrivateRoute path="/resume" component={Resume} />
       <AdminRoute path="/admin" component={Admin} />

@@ -1,0 +1,22 @@
+.sacks-spiral {
+  margin-bottom: 5em;
+
+  svg {
+    display: block;
+    margin: auto;
+  }
+
+  canvas {
+    display: block;
+    margin: auto;
+    // transform: scale(0.5);
+    // transform-origin: left;
+  }
+
+  .wait {
+    h1 {
+      text-align: center;
+    }
+  }
+
+}

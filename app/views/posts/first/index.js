@@ -11,7 +11,7 @@ import Conway from './Conway';
 
 const Post = () => (
   <Main>
-    <article className="post" id="post">
+    <article className="post" id="post-conway">
       <Helmet title="Welcome | Blog" />
       <header>
         <div className="title">
