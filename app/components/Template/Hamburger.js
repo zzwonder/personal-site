@@ -8,7 +8,6 @@ import routes from '../../data/routes';
 const Menu = Menus.slide;
 
 class Hamburger extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -45,8 +44,8 @@ class Hamburger extends Component {
         <Menu right noOverlay isOpen={this.state.open}>
           <ul className="hamburger-ul">
             {routes.map(l => (
-              <li key={l.label} onClick={this.handleClick}>
-                <Link to={l.path}>
+              <li key={l.label}>
+                <Link to={l.path} onClick={this.handleClick}>
                   <h3 className={l.index ? 'index-li' : null}>{l.label}</h3>
                 </Link>
               </li>
