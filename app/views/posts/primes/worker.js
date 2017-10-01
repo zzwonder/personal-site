@@ -1,4 +1,4 @@
-import { isPrime } from './utils';
+import isPrime from './utils';
 
 // worker
 self.onmessage = (msg) => {

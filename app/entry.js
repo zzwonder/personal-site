@@ -20,6 +20,7 @@ import Contact from './views/Contact';
 import Blog from './views/Blog';
 import First from './views/posts/first';
 import Primes from './views/posts/primes';
+import Comments from './views/posts/comments';
 
 // Hidden
 import Music from './views/Music';
@@ -51,6 +52,7 @@ ReactDOM.render(
       <Route path="/blog" exact component={Blog} />
       <Route path="/blog/first" exact component={First} />
       <Route path="/blog/primes" exact component={Primes} />
+      <Route path="/blog/comments" exact component={Comments} />
 
       <PrivateRoute path="/resume" component={Resume} />
       <AdminRoute path="/admin" component={Admin} />

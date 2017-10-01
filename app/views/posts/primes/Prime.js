@@ -10,7 +10,7 @@ class Prime extends Component {
     super(props);
     this.state = {
       r: 0.5,
-      points: 1000000,
+      points: 5000000,
       primes: [],
       center: {
         x: props.width / 2,
@@ -70,7 +70,7 @@ class Prime extends Component {
     const ctx = this.canvas.getContext('2d');
     ctx.canvas.width = this.props.width;
     ctx.canvas.height = this.props.height;
-    ctx.fillStyle = 'black'; // "rgba(255, 0, 0, 0.95)";
+    ctx.fillStyle = 'rgba(255, 0, 0, 0.95)'; // "rgba(255, 0, 0, 0.95)";
 
     this.state.primes.forEach((i) => {
       const sqi = Math.sqrt(i);
@@ -79,39 +79,6 @@ class Prime extends Component {
       ctx.fillRect(x, y, this.state.r, this.state.r);
     });
   }
-/*
-  fillUlamCanvas() {
-    const twoPi = 2 * Math.PI;
-    const x_offset = this.state.center.x / Math.sqrt(this.state.points);
-    const y_offset = this.state.center.y / Math.sqrt(this.state.points);
-
-    const offset = this.props.width % 2 === 0 ? 0 : 1; // even or odd
-    const roots = new Array(Math.ceil(Math.sqrt(this.state.points)))
-      .fill().map((e, i) => i + 1)
-      .filter(i => i % 2 === offset);
-    const squares = roots.map(i => i * i);
-    // console.log(roots, squares);
-    this.state.primes.forEach((p) => {
-      const rank = Math.min(...squares.filter(s => s > p));
-      const sideL = Math.pow(Math.sqrt(rank) - 2, 2);
-      // console.log(rank, sideL, Math.sqrt(rank), p - sideL);
-    });
-
-    var ctx = this.ulam.getContext('2d');
-    ctx.canvas.width  = this.props.width;
-    ctx.canvas.height = this.props.height;
-    ctx.fillStyle = "black"; // "rgba(255, 0, 0, 0.95)";
-
-
-    this.state.primes.forEach((i) => {
-      const sqi = 50*Math.log(i);
-      const x = - Math.cos(sqi * twoPi) * sqi * x_offset;
-      const y = Math.sin(sqi * twoPi) * sqi * y_offset;
-      ctx.fillRect(Math.round(this.state.center.x + x),
-        Math.round(this.state.center.y + y), this.state.r, this.state.r);
-    })
-  } */
-
 
   runWorkers = () => {
     let numbersToCheck = this.state.points;
@@ -136,14 +103,12 @@ class Prime extends Component {
           });
           clearInterval(this.timer);
           this.fillCanvas();
-          // this.fillUlamCanvas();
         }
         if (this.state.done && primes.length > this.state.primes.length) {
           this.setState({
             primes,
           });
           this.fillCanvas();
-          // this.fillUlamCanvas();
         }
       };
       worker.postMessage({
@@ -160,11 +125,8 @@ class Prime extends Component {
       <div className="sacks-spiral">
         <h1> Sacks Spiral </h1>
         {this.state.done ? <p>{this.state.primes.length} primes found under {this.state.points} in {this.state.time.toFixed(2)} milliseconds.</p> : <div className="wait"><p> Calculating {'...'.substr(0, this.state.step % 6)} </p></div>}
-        {this.state.done ? this.getSVG() : null }
+        {/* this.state.done ? this.getSVG() : null */}
         {this.state.done ? (<canvas ref={(input) => { this.canvas = input; }} />) : null}
-        <h1> Ulam Spiral </h1>
-        {/* this.state.done ? (<canvas ref={(input) => { this.ulam = input; }} />) : null */}
-
       </div>
     );
   }
