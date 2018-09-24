@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Main from '../layouts/Main';
 
@@ -54,9 +55,8 @@ class Contact extends Component {
   }
 
   tick() {
-    let idx = this.state.idx;
-    let char = this.state.char + 1;
-    if (char - this.state.hold > messages[idx].length) {
+    let { idx, char } = this.state;
+    if (char - this.state.hold >= messages[idx].length) {
       idx += 1;
       char = 0;
     }
@@ -64,15 +64,15 @@ class Contact extends Component {
       clearInterval(this.timer);
     } else {
       this.setState({
-        char,
-        message: messages[idx].slice(0, char),
         idx,
+        char: char + 1,
+        message: messages[idx].slice(0, char + 1),
       });
     }
   }
 
   render() {
-    const message = this.state.message;
+    const { message } = this.state;
     return (
       <Main>
         <Helmet title="Contact" />
@@ -93,9 +93,7 @@ class Contact extends Component {
           </div>
           <ul className="icons">
             {data.map(s => (
-              <li key={s.label}>
-                <a href={s.link} className={s.icon}><span className="label">{s.label}</span></a>
-              </li>
+              <li key={s.label}><a href={s.link}><FontAwesomeIcon icon={s.icon} /></a></li>
             ))}
           </ul>
         </article>

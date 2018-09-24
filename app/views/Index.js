@@ -13,11 +13,12 @@ const Index = () => (
         </div>
       </header>
       <p> Welcome to my website. Please feel free to read more <Link to="/about">about me</Link>,
-      or you can check out my {' '}
+        or you can check out my {' '}
         <Link to="/resume">resume</Link>, {' '}
         <Link to="/projects">projects</Link>, {' '}
-      view <Link to="/stats">site statistics</Link>, {' '}
-      or <Link to="/contact">contact</Link> me.</p>
+        view <Link to="/stats">site statistics</Link>, {' '}
+        or <Link to="/contact">contact</Link> me.
+      </p>
       <p> Source available <a href="https://github.com/mldangelo/mldangelo">here</a>.</p>
     </article>
   </Main>

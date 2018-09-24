@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const User = new Schema({
   name: String,
@@ -16,6 +16,8 @@ const User = new Schema({
     type: Boolean,
     default: false,
   },
+}, {
+  timestamps: true,
 });
 
 export default mongoose.model('users', User);

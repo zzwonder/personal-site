@@ -1,4 +1,7 @@
-# Me specific 
+# npm related
+package-lock.json
+
+# Me specific
 scratch/
 
 # Logs
