@@ -1,7 +1,9 @@
-FROM node:11
+FROM mhart/alpine-node:11
 
 ENV NODE_PATH=/node_modules
 ENV PATH=$PATH:/node_modules/.bin
+
+RUN apk update && apk add bash && rm -rf /var/cache/apk/*
 
 WORKDIR /app
 COPY . /app

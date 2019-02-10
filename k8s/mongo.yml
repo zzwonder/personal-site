@@ -39,8 +39,6 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: mongodb-disk
-      annotations:
-        volume.beta.kubernetes.io/storage-class: "fast"
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:

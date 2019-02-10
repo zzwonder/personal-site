@@ -24,7 +24,7 @@ spec:
         - npm deploy
         env:
         - name: PORT
-          value: 7999
+          value: '7999'
         - name: NODE_ENV
           value: production
         - name: DB_NAME
@@ -32,11 +32,11 @@ spec:
         - name: DB_HOST
           value: localhost
         - name: GA_ID
-          value: "UA-68649021-1"
+          value: 'UA-68649021-1'
         envFrom:
         - secretRef:
             name: website-env
-        image: gcr.io/mldangelo-171318/github.com/mldangelo/personal-site@sha256:c0c12799b20510f8679ee78ef6b7ee3bbc7bc20b285dbd2de96669f0a63451e0
+        image: gcr.io/mldangelo-171318/github.com/mldangelo/personal-site@sha256:1482d89ba4aba7ba90b6e6580492f0525a16f592af85cac39917dec84c3faddb
         imagePullPolicy: Always
         name: website
         resources: {}
