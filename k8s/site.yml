@@ -25,7 +25,7 @@ spec:
         envFrom:
         - secretRef:
             name: website-env
-        image: gcr.io/mldangelo-171318/github.com/mldangelo/personal-site@sha256:b301f536716476e70362ee07955679dc2db8e7a65b2911afe2b22cae17feff34
+        image: gcr.io/mldangelo-171318/github.com/mldangelo/personal-site@sha256:c0c12799b20510f8679ee78ef6b7ee3bbc7bc20b285dbd2de96669f0a63451e0
         imagePullPolicy: Always
         name: website
         resources: {}
