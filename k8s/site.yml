@@ -21,7 +21,7 @@ spec:
         - /bin/bash
         - -c
         - --
-        - npm deploy
+        - npm run deploy
         env:
         - name: PORT
           value: '7999'
