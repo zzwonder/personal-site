@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: website-server
+  name: website-server
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: website-server
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: website-server
+    spec:
+      containers:
+      - command:
+        - /bin/bash
+        - -c
+        - --
+        - npm deploy
+        envFrom:
+        - secretRef:
+            name: website-env
+        image: gcr.io/mldangelo-171318/github.com/mldangelo/personal-site@sha256:b301f536716476e70362ee07955679dc2db8e7a65b2911afe2b22cae17feff34
+        imagePullPolicy: Always
+        name: website
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        ports:
+          - containerPort: 7999
