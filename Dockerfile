@@ -1,4 +1,4 @@
-FROM node:11
+FROM mhart/alpine-node:latest
 
 ENV NODE_PATH=/node_modules
 ENV PATH=$PATH:/node_modules/.bin
