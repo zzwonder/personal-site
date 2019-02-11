@@ -21,7 +21,7 @@ spec:
         - /bin/bash
         - -c
         - --
-        - npm run deploy
+        - npm run forever-start
         env:
         - name: PORT
           value: '7999'
@@ -36,8 +36,7 @@ spec:
         envFrom:
         - secretRef:
             name: website-env
-        image: gcr.io/mldangelo-171318/github.com/mldangelo/personal-site@sha256:1482d89ba4aba7ba90b6e6580492f0525a16f592af85cac39917dec84c3faddb
-        imagePullPolicy: Always
+        image: gcr.io/mldangelo-171318/github.com/mldangelo/personal-site@sha256:d4bca47cc9834c19548a12af97b428168eca05b836439a55b4708bdae4299f35
         name: website
         resources: {}
         terminationMessagePath: /dev/termination-log
