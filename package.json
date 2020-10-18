@@ -3,18 +3,17 @@
   "version": "2.1.0",
   "homepage": "https://mldangelo.github.io/",
   "scripts": {
-    "build": "rimraf ./build && webpack --config ./webpack/webpack.production.config.babel.js --progress --profile --colors",
     "postbuild": "react-snap",
     "build-dev": "rimraf ./build && babel-node webpack-cli --config ./webpack/webpack.config.babel.js --progress --profile --colors",
     "lint": "eslint app server test webpack",
-    "test": "mocha --exit --require @babel/register ./test/test.js",
+    "test_bak": "mocha --exit --require @babel/register ./test/test.js",
     "dev": "nodemon server/server.js --ignore app/ --ignore test/ --exec babel-node",
     "predeploy": "npm run build && cp -r public/* build/",
     "deploy": "gh-pages -d build",
-    "start1": "react-scripts start",
-    "build1": "react-scripts build",
-    "test1": "react-scripts test",
-    "eject1": "react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
