@@ -1,7 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Job = ({ data }) => (
+interface Props {
+  data: {
+    company: string,
+    daterange: string,
+    link: string,
+    position: number,
+    points: string[],
+  };
+}
+
+const Job: React.FC<Props> = ({ data }) => (
   <article className="jobs-container">
     <header>
       <h4><a href={data.link}>{data.company}</a> - {data.position}</h4>
@@ -14,15 +23,5 @@ const Job = ({ data }) => (
     </ul>
   </article>
 );
-
-Job.propTypes = {
-  data: PropTypes.shape({
-    link: PropTypes.string.isRequired,
-    company: PropTypes.string.isRequired,
-    position: PropTypes.string.isRequired,
-    daterange: PropTypes.string.isRequired,
-    points: PropTypes.arrayOf(PropTypes.string).isRequired,
-  }).isRequired,
-};
 
 export default Job;
