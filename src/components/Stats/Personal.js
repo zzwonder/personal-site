@@ -4,6 +4,7 @@ import Table from './Table';
 import personalData from '../../data/stats';
 
 const PersonalStats = () => {
+
   const [data, setData] = useState(personalData);
 
   const tick = () => {
