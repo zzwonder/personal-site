@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import data from '../../data/contact';
 
+const BASE_PATH = '';
+
 const Nav = () => (
   <section id="sidebar">
     <section id="intro">

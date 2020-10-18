@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import url from 'url';
 
+const BASE_PATH = '';
+
 const Cell = ({ data }) => (
   <div className="cell-container">
     <article className="mini-post">
