@@ -1,22 +1,27 @@
 import React from 'react';
 import Link from 'next/link';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 
-import Main from '../layouts/Main';
+// import Main from '../layouts/Main';
 
-import markdown from 'raw-loader!../data/about.md';
-
+import markdown from '../content/about.md';
+/*
 const count = markdown.split(/\s+/)
   .map((s) => s.replace(/\W/g, ''))
   .filter((s) => s.length).length;
-
+*/
 // Make all hrefs react router links
-const LinkRenderer = ({ ...children }) => <Link {...children} />;
 
+// const markdown = await import(`../content/about.md`);
+
+// const LinkRenderer = ({ ...children }) => <Link {...children} />;
+const count = 5;
 const About = () => (
-  <Main>
-    <Helmet title="About" />
+  <>
+    <Head>
+    <title>About</title>  
+    </Head>
     <article className="post" id="about">
       <header>
         <div className="title">
@@ -26,13 +31,10 @@ const About = () => (
       </header>
       <ReactMarkdown
         source={markdown}
-        renderers={{
-          Link: LinkRenderer,
-        }}
         escapeHtml={false}
       />
     </article>
-  </Main>
+  </>
 );
 
 export default About;
