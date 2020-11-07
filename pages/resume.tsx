@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 
-import Main from '../layouts/Main';
+// import Main from '../layouts/Main';
 
 import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
@@ -24,8 +24,10 @@ const sections = [
 ];
 
 const Resume = () => (
-  <Main>
-    <Helmet title="Resume" />
+  <>
+  <Head>
+  <title>Resume</title>  
+  </Head>
     <article className="post" id="resume">
       <header>
         <div className="title">
@@ -46,7 +48,7 @@ const Resume = () => (
       <References />
 
     </article>
-  </Main>
+  </>
 );
 
 export default Resume;
