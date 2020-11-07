@@ -1,15 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 
-import Main from '../layouts/Main';
+//import Main from '../layouts/Main';
 
 import Personal from '../components/Stats/Personal';
 import Site from '../components/Stats/Site';
 
 const Stats = () => (
-  <Main>
-    <Helmet title="Stats" />
+  <>
+    <Head>
+    <title>Stats</title>  
+    </Head>
     <article className="post" id="stats">
       <header>
         <div className="title">
@@ -19,7 +21,7 @@ const Stats = () => (
       <Personal />
       <Site />
     </article>
-  </Main>
+  </>
 );
 
 export default Stats;
