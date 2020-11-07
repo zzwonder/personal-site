@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import Link from 'next/link';
+import Head from 'next/head'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Main from '../layouts/Main';
@@ -77,13 +77,14 @@ const Contact = () => {
     }
   }, isActive ? delay : null);
 
-  return (
-    <Main>
-      <Helmet title="Contact" />
+  return ( <>
+      <Head>
+        <title>Contact</title>
+      </Head>
       <article className="post" id="contact">
         <header>
           <div className="title">
-            <h2><Link to="/contact">Contact</Link></h2>
+            <h2><Link href="/contact">Contact</Link></h2>
           </div>
         </header>
         <div className="email-at">
@@ -110,7 +111,7 @@ const Contact = () => {
           ))}
         </ul>
       </article>
-    </Main>
+      </>
   );
 };
 
