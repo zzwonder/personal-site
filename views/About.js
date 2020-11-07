@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Helmet } from 'react-helmet';
 import ReactMarkdown from 'react-markdown';
 
@@ -20,7 +20,7 @@ const About = () => (
     <article className="post" id="about">
       <header>
         <div className="title">
-          <h2><Link to="/about">About Me</Link></h2>
+          <h2><Link href="/about">About Me</Link></h2>
           <p>(in about {count} words)</p>
         </div>
       </header>
