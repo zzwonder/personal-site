@@ -19,6 +19,7 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-props-no-spreading": 0,
     "react/jsx-wrap-multilines": [1, {"declaration": true, "assignment": true, "return": true}],
+    "import/no-webpack-loader-syntax": 0,
     "jsx-a11y/no-static-element-interactions": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/href-no-hash": "off",

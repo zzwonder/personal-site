@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 
 import Main from '../layouts/Main';
 
-import markdown from '../data/about.md';
+import markdown from 'raw-loader!../data/about.md';
 
 const count = markdown.split(/\s+/)
   .map((s) => s.replace(/\W/g, ''))
