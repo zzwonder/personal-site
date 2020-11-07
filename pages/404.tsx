@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import Link from 'next/link';
+import Head from 'next/head'
 
 const PageNotFound = () => (
   <div className="not-found">
-    <Helmet title="404" />
+    <Head>
+    <title>404</title>  
+    </Head>
     <h1>Page Not Found.</h1>
-    <p>Return to <Link to="/">index</Link>.</p>
+    <p>Return to <Link href="/">index</Link>.</p>
   </div>
 );
 
