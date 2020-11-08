@@ -13,6 +13,10 @@ const handleProps = ({ categories, skills }) => ({
 });
 
 class Skills extends Component {
+	public state: any;
+	public props: any;
+	public setState: any;
+
   constructor(props) {
     super(props);
     this.state = handleProps({ categories: props.categories, skills: props.skills });
