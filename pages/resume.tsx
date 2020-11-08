@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
-// import Main from '../layouts/Main';
+import Layout from '../components/layout';
 
 import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
@@ -24,7 +24,7 @@ const sections = [
 ];
 
 const Resume = () => (
-  <>
+  <Layout>
   <Head>
   <title>Resume</title>  
   </Head>
@@ -48,7 +48,7 @@ const Resume = () => (
       <References />
 
     </article>
-  </>
+  </Layout>
 );
 
 export default Resume;

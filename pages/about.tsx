@@ -3,22 +3,21 @@ import Link from 'next/link';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 
-// import Main from '../layouts/Main';
+import Layout from '../components/layout';
 
 import markdown from '../content/about.md';
-/*
+
 const count = markdown.split(/\s+/)
   .map((s) => s.replace(/\W/g, ''))
   .filter((s) => s.length).length;
-*/
+
 // Make all hrefs react router links
 
 // const markdown = await import(`../content/about.md`);
 
 // const LinkRenderer = ({ ...children }) => <Link {...children} />;
-const count = 5;
 const About = () => (
-  <>
+  <Layout>
     <Head>
     <title>About</title>  
     </Head>
@@ -34,7 +33,7 @@ const About = () => (
         escapeHtml={false}
       />
     </article>
-  </>
+  </Layout>
 );
 
 export default About;

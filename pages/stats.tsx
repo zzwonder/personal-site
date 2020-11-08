@@ -2,13 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
-//import Main from '../layouts/Main';
+import Layout from '../components/layout';
 
 import Personal from '../components/Stats/Personal';
 import Site from '../components/Stats/Site';
 
 const Stats = () => (
-  <>
+  <Layout>
     <Head>
     <title>Stats</title>  
     </Head>
@@ -21,7 +21,7 @@ const Stats = () => (
       <Personal />
       <Site />
     </article>
-  </>
+  </Layout>
 );
 
 export default Stats;

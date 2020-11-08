@@ -2,13 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
-import Main from '../layouts/Main';
+import Layout from '../components/layout';
 
 import Cell from '../components/Projects/Cell';
 import data from '../data/projects';
 
 const Projects = () => (
-  <>
+  <Layout>
     <Head>
     <title>Projects</title>  
     </Head>
@@ -26,7 +26,7 @@ const Projects = () => (
         />
       ))}
     </article>
-    </>
+    </Layout>
 );
 
 export default Projects;

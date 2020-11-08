@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Main from '../layouts/Main';
+import Layout from '../components/layout';
 
 import data from '../data/contact';
 
@@ -77,7 +77,7 @@ const Contact = () => {
     }
   }, isActive ? delay : null);
 
-  return ( <>
+  return ( <Layout>
       <Head>
         <title>Contact</title>
       </Head>
@@ -111,7 +111,7 @@ const Contact = () => {
           ))}
         </ul>
       </article>
-      </>
+      </Layout>
   );
 };
 
