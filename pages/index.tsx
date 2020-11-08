@@ -1,8 +1,8 @@
 import Link from 'next/link';
-
-//import Main from '../layouts/Main';
+import Layout from '../components/layout'
 
 const IndexPage = () => (
+  <Layout>
     <article className="post" id="index">
       <header>
         <div className="title">
@@ -19,6 +19,7 @@ const IndexPage = () => (
       </p>
       <p> Source available <a href="https://github.com/mldangelo/personal-site">here</a>.</p>
     </article>
+  </Layout>
 );
 
 export default IndexPage;
