@@ -13,8 +13,17 @@ interface Props {
 const Job: React.FC<Props> = ({ data }) => (
   <article className="jobs-container">
     <header>
-      <h4><a href={data.link}>{data.company}</a> - {data.position}</h4>
-      <p className="daterange"> {data.daterange}</p>
+      <h4>
+        <a href={data.link}>{data.company}</a>
+        {' '}
+        -
+        {' '}
+        {data.position}
+      </h4>
+      <p className="daterange">
+        {' '}
+        {data.daterange}
+      </p>
     </header>
     <ul className="points">
       {data.points.map((point) => (

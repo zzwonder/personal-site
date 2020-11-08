@@ -18,13 +18,18 @@ const count = markdown.split(/\s+/)
 const About = () => (
   <Layout>
     <Head>
-    <title>About</title>  
+      <title>About</title>
     </Head>
     <article className="post" id="about">
       <header>
         <div className="title">
           <h2><Link href="/about">About Me</Link></h2>
-          <p>(in about {count} words)</p>
+          <p>
+            (in about
+            {count}
+            {' '}
+            words)
+          </p>
         </div>
       </header>
       <ReactMarkdown

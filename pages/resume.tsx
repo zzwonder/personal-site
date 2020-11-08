@@ -24,9 +24,9 @@ const sections = [
 
 const Resume = () => (
   <Layout>
-  <Head>
-  <title>Resume</title>  
-  </Head>
+    <Head>
+      <title>Resume</title>
+    </Head>
     <article className="post" id="resume">
       <header>
         <div className="title">
@@ -35,7 +35,8 @@ const Resume = () => (
             {sections.map((sec) => (
               <h4 key={sec}>
                 <a href={`#${sec.toLowerCase()}`}>{sec}</a>
-              </h4>))}
+              </h4>
+            ))}
           </div>
 
         </div>

@@ -77,7 +77,8 @@ const Contact = () => {
     }
   }, isActive ? delay : null);
 
-  return ( <Layout>
+  return (
+    <Layout>
       <Head>
         <title>Contact</title>
       </Head>
@@ -111,7 +112,7 @@ const Contact = () => {
           ))}
         </ul>
       </article>
-      </Layout>
+    </Layout>
   );
 };
 

@@ -8,7 +8,7 @@ interface Props {
   data: {
     title: string,
     link: string,
-    image: string, 
+    image: string,
     date: string,
     desc: string,
   };

@@ -9,7 +9,7 @@ import Site from '../components/Stats/Site';
 const Stats = () => (
   <Layout>
     <Head>
-    <title>Stats</title>  
+      <title>Stats</title>
     </Head>
     <article className="post" id="stats">
       <header>

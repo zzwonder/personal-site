@@ -9,7 +9,7 @@ import data from '../data/projects';
 const Projects = () => (
   <Layout>
     <Head>
-    <title>Projects</title>  
+      <title>Projects</title>
     </Head>
     <article className="post" id="projects">
       <header>
@@ -25,7 +25,7 @@ const Projects = () => (
         />
       ))}
     </article>
-    </Layout>
+  </Layout>
 );
 
 export default Projects;
