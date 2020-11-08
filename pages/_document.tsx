@@ -9,6 +9,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+        <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900" rel="stylesheet" async/>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
