@@ -2,7 +2,8 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as gtag from '../lib/gtag';
-// import '../styles/index.css'
+// All of our CSS
+import '../public/css/main.scss';
 
 const App = ({ Component, pageProps }) => {
   const router = useRouter()
