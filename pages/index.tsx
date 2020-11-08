@@ -7,7 +7,7 @@ const IndexPage = () => (
       <header>
         <div className="title">
           <h2><Link href="/">About this site</Link></h2>
-          <p>A beautiful, responsive, react app written with modern Javascript.</p>
+          <p>A beautiful, responsive, next.js app.</p>
         </div>
       </header>
       <p>

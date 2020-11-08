@@ -177,6 +177,11 @@ const skills = [{
   category: ['Data Engineering', 'Data Science'],
 },
 {
+  title: 'Dask',
+  competency: 2,
+  category: ['Data Engineering', 'Data Science'],
+},
+{
   title: 'Dagster',
   competency: 2,
   category: ['Data Engineering', 'Python'],

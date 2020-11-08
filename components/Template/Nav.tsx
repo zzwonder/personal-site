@@ -30,17 +30,9 @@ const Nav = () => (
         the co-founder and CTO of
         <a href="https://arthena.com">Arthena</a>
         . Before Arthena I was
-        at
-        <a href="https://matroid.com">Matroid</a>
-        ,
-        <a href="https://planet.com">Planet</a>
-        ,
-        <a href="https://planetaryresources.com">Planetary Resources</a>
-        ,
-        <a href="https://facebook.com">Facebook</a>
-        , and
-        <a href="https://seds.org">SEDS</a>
-        .
+        at <a href="https://matroid.com">Matroid</a>, <a href="https://planet.com">Planet</a>,
+        <a href="https://planetaryresources.com">Planetary Resources</a>, <a href="https://facebook.com">Facebook</a>
+        , and <a href="https://seds.org">SEDS</a>.
       </p>
       <ul className="actions">
         <li>
